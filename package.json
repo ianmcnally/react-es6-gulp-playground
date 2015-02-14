@@ -1,5 +1,5 @@
 {
-  "name": "gulp-w-react",
+  "name": "gulp-w-react-es6",
   "version": "1.0.0",
   "description": "Playground for React, ES6 and gulp",
   "main": "Gulpfile.js",
@@ -9,7 +9,12 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "6to5ify": "^4.1.1",
+    "bl": "^0.9.4",
+    "browserify": "^8.1.3",
     "gulp": "^3.8.11",
-    "gulp-react": "^2.0.0"
+    "through2": "^0.6.3",
+    "vinyl": "^0.4.6",
+    "vinyl-source-stream": "^1.0.0"
   }
 }

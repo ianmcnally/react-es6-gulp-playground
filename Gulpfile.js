@@ -1,10 +1,14 @@
 var gulp = require('gulp');
-var react = require('gulp-react');
+var browserify = require('browserify');
+var to5ify = require('6to5ify');
+var source = require('vinyl-source-stream');
 
 gulp.task('compile', function(){
-  gulp.src('src/**/*.jsx')
-    .pipe(react({harmony : true}))
-    .pipe(gulp.dest('dist/javascript'));
+  return browserify('./src/app.jsx')
+    .transform(to5ify)
+    .bundle()
+    .pipe(source('main.js'))
+    .pipe(gulp.dest('./dist/javascript'));
 });
 
 gulp.task('default', ['compile']);

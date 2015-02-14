@@ -1,5 +1,5 @@
 var app = React.createClass({
-  render : () => {
+  render (){
     return (
       <h1>Sup</h1>
     )
