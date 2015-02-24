@@ -13,3 +13,10 @@ Note: Having `node` installed is a prerequisite.
 1. To compile, run `gulp`.
   - Compiled js is in dist/javascript.
   - The default entry file is src/app.jsx.
+
+## Test
+
+Includes support for [Jest](https://facebook.github.io/jest/docs/tutorial-react.html#content) with ES6.
+
+1. To run tests, run `gulp test`.
+  - Looks for files ending in `-test.js` inside `src/`.
