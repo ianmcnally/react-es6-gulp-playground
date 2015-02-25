@@ -10,9 +10,12 @@ Note: Having `node` installed is a prerequisite.
 
 ## Dev
 
-1. To compile, run `gulp`.
+1. To watch and re-compile on change, run `gulp`.
+
+2. To compile, run `gulp compile`.
   - Compiled js is in dist/javascript.
   - The default entry file is src/app.jsx.
+
 
 ## Test
 

@@ -5,11 +5,15 @@ var browserify = require('browserify');
 var babelify = require('babelify');
 var source = require('vinyl-source-stream');
 var jest = require('gulp-jest');
+var chalk = require('chalk');
 
 gulp.task('compile', function(){
-  return browserify('./src/app.jsx')
+  browserify('./src/app.jsx')
     .transform(babelify)
     .bundle()
+    .on('error', function(err){
+      console.log(chalk.bold.red(err));
+    })
     .pipe(source('main.js'))
     .pipe(gulp.dest('./dist/javascript'));
 });
@@ -25,6 +29,10 @@ gulp.task('jest', function(){
     }));
 });
 
-gulp.task('default', ['compile']);
+gulp.task('watch', function(){
+  gulp.watch(['src/**/*.js*'], ['compile']);
+});
+
+gulp.task('default', ['watch']);
 
 gulp.task('test', ['jest']);
